@@ -8,10 +8,31 @@
   <body>
     <form id="carform" autocomplete="off">
       <label>
-        <input type="checkbox" id="sunroof" value="1000" />
+        <input
+          type="checkbox"
+          id="sunroof"
+          value="1000"
+          data-itemname="Sunroof"
+        />
         Sunroof: $1000
       </label>
+      <label>
+        <input
+          type="checkbox"
+          id="gps"
+          value="5000"
+          data-itemname="Built-in GPS"
+        />
+        Built-in GPS: $5000
+      </label>
     </form>
+
+    <div>
+      Selections:
+      <div id="selections"></div>
+
+      Total Price: <span id="price"></span>
+    </div>
 
     <div>Total Price: <span id="price"></span></div>
     <script src="./index.js"></script>

@@ -16,8 +16,12 @@ let price = 20000;
 const priceSpan = document.getElementById("price");
 priceSpan.innerHTML = price;
 
-// when the user clicks sunroof, handle it properly
-document.getElementById("sunroof").onclick = handleOption;
+// grab all the input tags within the car form
+const options = document.getElementById("carform").querySelectorAll("input");
+// loop through the options and assign each one the handleOption function on the onclick event
+options.forEach((option) => {
+  option.onclick = handleOption;
+});
 
 // when user clicks sunroof, handle it properly
 function handleOption() {
@@ -27,5 +31,25 @@ function handleOption() {
   if (this.checked) price += itemPrice;
   else price -= itemPrice;
 
+  showSelections();
+
   priceSpan.innerHTML = price;
+}
+
+function showSelections(){
+	
+	// start with an empty list
+	const list = [];
+	
+	// find each checked option in our form
+	const checkedOnes = document.getElementById('carform').querySelectorAll('input:checked');
+	
+	// for each checked option, get the item name and put it on the list  
+  checkedOnes.forEach(checkbox => {
+    const itemname = checkbox.getAttribute("data-itemname");
+    list.push(itemname);
+  });
+
+	// show the completed list
+	document.getElementById('selections').innerHTML = list.join('<br>');
 }
