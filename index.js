@@ -47,9 +47,9 @@ function showSelections(){
 	// for each checked option, get the item name and put it on the list  
   checkedOnes.forEach(checkbox => {
     const itemname = checkbox.getAttribute("data-itemname");
-    list.push(itemname);
+    list.push(`<li>${itemname}</li>`);
   });
 
 	// show the completed list
-	document.getElementById('selections').innerHTML = list.join('<br>');
+	document.getElementById('selections').innerHTML = list.join('');
 }

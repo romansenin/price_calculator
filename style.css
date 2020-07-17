@@ -1,0 +1,20 @@
+#carform {
+  background-color: #f3f3f3;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#selections-container {
+  background-color: #f3f3f3;
+  display: flex;
+  padding: 20px;
+}
+
+#total {
+  background-color: #f3f3f3;
+  padding: 20px;
+  margin-bottom: 20px;
+}
